@@ -1,0 +1,23 @@
+version: '3'
+services:
+  server:
+    build: .
+    container_name: server_container
+    networks:
+      - appnet
+    command: ["./AutomaticPowerReduction", "server"]  # Указываем роль сервера
+    ports:
+      - "1111:1111"  # Маппим порт 1111 на хост и контейнер
+
+  client:
+    build: .
+    container_name: client_container
+    networks:
+      - appnet
+    depends_on:
+      - server
+    command: ["./AutomaticPowerReduction", "client"]  # Указываем роль клиента
+
+networks:
+  appnet:
+    driver: bridge
