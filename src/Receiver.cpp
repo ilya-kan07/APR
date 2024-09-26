@@ -11,7 +11,12 @@ void Receiver::AcceptData(SOCKET socket)
 {
     char msg[50];
     while (true) {
+
+        #ifdef _WIN32
         int result = recv(socket, msg, sizeof(msg) - 1, NULL);
+        #else
+        int result = recv(socket, msg, sizeof(msg) - 1, 0);
+        #endif
 
         if (result > 0)
         {

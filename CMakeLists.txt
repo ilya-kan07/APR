@@ -16,7 +16,7 @@ set(HEADER_FILES
     include/Receiver.h
     include/ClearConsole.h
     include/FiberFunction.h
-    include/SocketConnection.h
+    include/Sockets.h
 )
 
 set(SOURCE_FILES
@@ -26,7 +26,6 @@ set(SOURCE_FILES
     src/NodeTest.cpp
     src/OSC.cpp
     src/Receiver.cpp
-    src/SocketConnection.cpp
 )
 
 add_library(MyLib

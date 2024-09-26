@@ -1,8 +1,6 @@
 #ifndef NODE_H
 #define NODE_H
-#include <WinSock2.h>
-#pragma comment(lib, "ws2_32.lib")
-#pragma warning(disable: 4996)
+#include <Sockets.h>
 #include <iostream>
 #include <mutex>
 #include <string>
